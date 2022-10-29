@@ -1,4 +1,5 @@
-﻿using System;
+﻿using parc_auto_manager.controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,12 @@ namespace parc_auto_manager
     {
         static void Main(string[] args)
         {
+
+            ControlMasina control = new ControlMasina();
+            control.afisare();
+
+
+            Console.ReadKey();
         }
     }
 }

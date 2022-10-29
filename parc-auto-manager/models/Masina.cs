@@ -25,6 +25,16 @@ namespace parc_auto_manager.models
             return text;
         }
 
+        //constructorul clasei Masina cu 5 parametrii
+        public Masina(string marcaAuto, string modelAuto, string culoare, int anFabricatie, int caiPutere)
+        {
+            this.marcaAuto = marcaAuto;
+            this.modelAuto = modelAuto;
+            this.culoare = culoare;
+            this.anFabricatie = anFabricatie;
+            this.caiPutere = caiPutere;
+        }
+
         //gettere
         public string getmarcaAuto() { return this.marcaAuto; }
         public string getmodelAuto() { return this.modelAuto; }
