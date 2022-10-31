@@ -1,4 +1,6 @@
 ﻿using parc_auto_manager.controllers;
+using parc_auto_manager.models;
+using parc_auto_manager.view;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +13,13 @@ namespace parc_auto_manager
     {
         static void Main(string[] args)
         {
+            View view = new View();  
 
-            ControlMasina control = new ControlMasina();
-            control.afisare();
+           //k ControlMasina a= new ControlMasina();//referinta obiect de tip ControlMasina
+           //Masina m = a.afisazaMasinaMaxCaiPutere();
+           //Console.WriteLine("cea mai puternica masina este: " + m.descriere());
+            Console.ReadKey();   //asteapta sa primeasca o tasta
 
-
-            Console.ReadKey();
         }
     }
 }

@@ -42,7 +42,6 @@ namespace parc_auto_manager.models
         public int getanFabricatie() { return this.anFabricatie; }
         public int getcaiPutere() { return this.caiPutere; }
 
-
         //settere
         public void setmarcaAuto(string marcaAuto) { this.marcaAuto = marcaAuto; }
         public void setmodelAuto(string modelAuto) { this.modelAuto = modelAuto; }
