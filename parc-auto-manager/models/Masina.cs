@@ -13,6 +13,8 @@ namespace parc_auto_manager.models
         private string culoare;
         private int anFabricatie;
         private int caiPutere;
+        private int like;
+
         
         public string descriere()
         {
@@ -21,18 +23,20 @@ namespace parc_auto_manager.models
             text += modelAuto + " ";
             text += culoare + " ";
             text += anFabricatie + " ";
-            text += caiPutere + " \n";
+            text += caiPutere + " ";
+            text += like + " \n";
             return text;
         }
 
         //constructorul clasei Masina cu 5 parametrii
-        public Masina(string marcaAuto, string modelAuto, string culoare, int anFabricatie, int caiPutere)
+        public Masina(string marcaAuto, string modelAuto, string culoare, int anFabricatie, int caiPutere, int like)
         {
             this.marcaAuto = marcaAuto;
             this.modelAuto = modelAuto;
             this.culoare = culoare;
             this.anFabricatie = anFabricatie;
             this.caiPutere = caiPutere;
+            this.like = like;
         }
 
         //gettere
@@ -41,6 +45,7 @@ namespace parc_auto_manager.models
         public string getculoare() { return this.culoare; }
         public int getanFabricatie() { return this.anFabricatie; }
         public int getcaiPutere() { return this.caiPutere; }
+        public int getlike() { return this.like; }
 
         //settere
         public void setmarcaAuto(string marcaAuto) { this.marcaAuto = marcaAuto; }
@@ -48,6 +53,8 @@ namespace parc_auto_manager.models
         public void setculoare(string culoare) { this.culoare = culoare; }
         public void setanFabricatie(int anFabricatie) { this.anFabricatie = anFabricatie; }
         public void setcaiPutere(int caiPutere) { this.caiPutere = caiPutere; }
+        public void setlike(int like) { this.like = like; }
+
 
         
 

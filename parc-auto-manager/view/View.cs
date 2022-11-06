@@ -10,17 +10,14 @@ namespace parc_auto_manager.view
 {
     internal class View
     {
-
         private ControlMasina control;  //referinta obiect de tip masina
-      
+
         public View()
         {
-            control = new ControlMasina();  //creare obiect "contro" de tip masina
+            control = new ControlMasina();  //creare obiect "contro" de tip masina in methoda.
 
             play();
         }
-
-
 
         public void meniu()
         {
@@ -29,6 +26,13 @@ namespace parc_auto_manager.view
             Console.WriteLine("Apasati tasta 2 pentru a vedea cea mai puternica masina ");
             Console.WriteLine("Apasati tasta 3 pentru a vedea masina cu cei mai putini cap putere ");
             Console.WriteLine("Apasati tasta 4 pentru a introduceti o masina noua ");
+            //stergere masina
+            Console.WriteLine("Apasati tasta 5 pentru a sterge o masina dupa marca");
+            Console.WriteLine("Apasati tasta 6 pentru a da like masiniilor favorite");
+            Console.WriteLine("Apasati tasta 7 pentru a numara likuriile in functie de marcaAuto");
+            Console.WriteLine("Apasati tasta 8 pentru a afisa masina cu cele mai multe likeuri ");  
+            Console.WriteLine("Apasati tasta 9 pentru a afisa masina cu cele mai putine likeuri ");
+
         }
 
         public void play()
@@ -47,7 +51,17 @@ namespace parc_auto_manager.view
                     case 3: afisazaMinimCaiPueter();
                             break;
                     case 4: adaugaMasinaNoua();
-                            break;  
+                            break;
+                    case 5: stergeMasina();
+                            break;
+                    case 6: like();
+                            break;
+                    case 7: numaralikeuri();
+                            break;
+                    case 8: afisazaMaxLike();
+                            break;
+                    case 9: afisazaMinLike();
+                            break;
 
                     default:
                             Console.WriteLine("gresit");
@@ -82,10 +96,42 @@ namespace parc_auto_manager.view
             int anFabricatie = Int32.Parse(Console.ReadLine());  //conversie string la int -  Parse in orice limbaj convertes string la int
             Console.WriteLine("Introduceti cai putere masina: ");
             int caiPutere = Int32.Parse(Console.ReadLine());
-             control.addMasina(marca,model,culoare,anFabricatie,caiPutere);
-
+            Console.WriteLine("Introduceti like '1 sau 0': ");
+            int like = Int32.Parse(Console.ReadLine());
+            control.addMasina(marca,model,culoare,anFabricatie,caiPutere,like);
         }
 
+        public void stergeMasina()
+        {
+            Console.WriteLine("introduceti marca masinii pentru sters: ");
+            string marca = Console.ReadLine();
+            control.stergeMasinaDupaMarca(marca);
+        }
 
+        public void like()
+        {
+            Console.WriteLine("la ce marca auto doriti sa dati like? ");
+            string like = Console.ReadLine();
+            control.likeMarcaAuto(like);
+        }
+
+        public void numaralikeuri()
+        {
+            Console.WriteLine("Introduceti marca auto pentru a numara likeuriile: ");
+            string numaralikeuri = Console.ReadLine();
+            control.numaraLikeMarca(numaralikeuri);
+        }
+
+        public void afisazaMaxLike()
+        {
+            Masina like = control.masinaMaxLike();
+            Console.WriteLine(like.descriere());
+        }
+
+        public void afisazaMinLike()
+        {
+            Masina like = control.masinaMinLike();
+            Console.WriteLine(like.descriere());
+        }
     }
 }

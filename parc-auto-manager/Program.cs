@@ -13,13 +13,16 @@ namespace parc_auto_manager
     {
         static void Main(string[] args)
         {
-            View view = new View();  
+            View view = new View();
 
-           //k ControlMasina a= new ControlMasina();//referinta obiect de tip ControlMasina
-           //Masina m = a.afisazaMasinaMaxCaiPutere();
-           //Console.WriteLine("cea mai puternica masina este: " + m.descriere());
-            Console.ReadKey();   //asteapta sa primeasca o tasta
+            ControlMasina a = new ControlMasina();//referinta obiect de tip ControlMasina
+            Masina m = a.afisazaMasinaMaxCaiPutere();
+            Console.WriteLine("cea mai puternica masina este: " + m.descriere());
+            
+            //testare stergere marca auto
+            //Console.WriteLine(x.aflaPozitieMarca("Honda"));
 
+            Console.ReadKey(); //asteapta sa primeasca o tasta
         }
     }
 }
