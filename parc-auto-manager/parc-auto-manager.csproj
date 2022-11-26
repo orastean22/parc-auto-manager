@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controllers\ControlMasina.cs" />
+    <Compile Include="models\User.cs" />
     <Compile Include="models\Masina.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
